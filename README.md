@@ -1,6 +1,8 @@
 # Techdegree-project-8
  #unit8
 
+## SQL Library Manager
+
 To make this nice project work
 
 - **Run `npm install`, to add all the necessary dependencies.**
