@@ -1,29 +1,40 @@
 body {
   padding: 10px 50px 50px;
   font: 18px "Garamond", serif;
+  background-image: url("../img/books.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+}
+.align_initial{
+ text-align: initial;
 }
 
 a {
-  color: #019875;
+  color: #0989a9;
   text-decoration: none;
   font-weight: bold;
   transition: 0.4s;
 }
 
   a:hover {
-    color: black;
+    color: #0ca37c;
   }
 
 a.button, input[type=submit] {
   color: white;
-  background: #019875;
+  background: #4c83a8;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
   padding: 10px 14px 12px;
   font-size: 14px;
   border-radius: 2px;
   cursor: pointer;
 }
-
+.search_form{
+  margin-top: -7px;
+  z-index: 1;
+}
 form a.button, input[type=submit] {
   margin-left: 140px;
   transition: 0.4s;
@@ -34,7 +45,7 @@ input[type=submit] {
 }
 
   a.button:hover, input[type=submit]:hover {
-    background-color: #01b189;
+    background-color: #22a0c0;
   }
 
 p {
@@ -47,28 +58,57 @@ ul {
   margin-bottom: 10px;
   line-height: 1.3em;
 }
-
+h1{
+  color: white;
+}
 h2 {
-  border-top: 2px solid #e7e7e7;
   padding-top: 20px;
+}
+
+table{
+  margin: auto;
+  border-collapse: collapse;
+  text-align: initial;
+  text-transform: capitalize;
 }
 
 th {
   border-bottom: 2px solid #D8B493;
   text-align: left;
   padding: 5px 20px 5px 10px;
+  color: white;
+  font-size: 25px;
 }
 
 tr {
   min-height: 50px;
 }
+#tr_th{
+  opacity: 1;
+}
 
 tr:nth-child(2n) {
-  background: #E7E7E7;
+  background: #fff;
 }
+tr:nth-child(odd){
+  background: #dbdbdb;
+  opacity: 0.9;
+}
+
+tr:nth-child(2n):hover {
+  background-color: #ebfeff;
+  opacity: 0.8;
+}
+tr:nth-child(odd):hover {
+  background-color: #ebfeff;
+  opacity: 0.8;
+}
+
 
 td {
   padding: 5px 20px 5px 10px;
+  min-width: 172px;
+  max-width: 378px;
 }
 
 label {
@@ -76,6 +116,12 @@ label {
   min-width: 130px;
   display: inline-block;
   transition: 0.4s;
+  color: white;
+  font-size: 27px;
+  background-color: #018398;
+  padding: 6px 0px 12px 0px;
+  margin-right: -7px;
+  text-align: center;
 }
 
 input {
@@ -90,8 +136,174 @@ input {
 input[type=text] {
   margin-left: 7px;
   width: 300px;
+  opacity: 0.93;
+  border: none;
+  padding: 15px;
+  color: #066086;
+  box-shadow: 4px 4px 5px #222020;
+  background-color: #d8deec;
+  font-size: 16px;
+  font-weight: bold;
+}
+/*--------------------------------------- Changes ---------------------------------------------*/
+.h1_home{
+  text-align: center;
+  color: white;
+  font-size: 50px;
 }
 
+.th_title{
+  background-color: #1c3e5b ;
+}
+.th_author{
+  background-color: #1d6290;
+}
+.th_genre{
+  background-color: #0f3d76;
+}
+.th_year{
+  background-color: #0d2136;
+}
+
+
+.div_button_search{
+  margin: auto;
+  display: flex;
+  z-index: -2;
+  width: 870px;
+}
+.p_button_create{
+  margin-left: 0px;
+  margin-top: 3px;
+  margin-bottom: 40px;
+}
+.showBooks{
+  background-color: #00BCD4 !important;
+}
+
+.p_input_search{
+  margin-top: 13px;
+  z-index: 1;
+}
+.button_search{
+  background: #0c9699;
+  font-weight: bold;
+  transition: 0.4s;
+  padding: 10px 14px 12px 10px;
+  font-size: 17px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  cursor: pointer;
+  position: absolute;
+  z-index: -1;
+  margin-top: 2px;
+  border: none;
+}
+.button_search:hover{
+  padding: 10px 14px 12px 25px;
+}
+
+
+.submit{
+  background-color: #26a88a  !important;
+}
+.delete{
+  background-color: #d65151  !important;
+}
+  .submit:hover{
+    background-color: #105e4c !important;
+  }
+  .delete:hover{
+    background-color: #ea7070 !important;
+  }
+
+
+
+.pagination{
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin-top: 10px;
+  margin: auto;
+  }
+  .pagination li{
+    display: inline;
+    text-align: center;
+  }
+  .pagination a{
+    float: left;
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 5px 12px;
+    color:#fff;
+    border:1px solid transparent;
+    line-height: 1.5;
+    background-color: #36938a;
+  }
+    .pagination a:hover{
+      background-color: #08322e;
+    }
+.pagination_active{
+  background-color: #08322e !important;
+}
+.prev_next{
+  background-color: #285e59 !important;
+}
+
+
+.notFoundText{
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+}.notFoundText span{
+    color: #fefefe;
+    margin-left: 10px;
+  }
+
 .error {
-  color: rgb(236, 15, 15);
+  text-shadow: 2px 2px black;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  font-size: 24px;
+  margin-top: -15px;
+  text-align: initial;
+  background-color: #000;
+  opacity: 0.9;
+  width: 546px;
+  padding: 5px;
+}
+.error_submit{
+  background-color: #d93d3d;
+  padding: 10px;
+  width: 672px;
+  font-size: 21px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.h1_error_Page{
+  font-size: 60px;
+}
+.error_404{
+  font-size: 78px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 3px 3px #f14b4b;
+  margin-top: -25px;
+}
+.p_error_Page{
+  color: white;
+  font-size: 25px;
+  text-shadow: 2px 2px 2px black;
+  font-weight: bold;
+}
+.mention{
+  color: white;
+  position: absolute;
+  top: -11px;
+  right: 7px;
+  font-size: 13px;
 }
