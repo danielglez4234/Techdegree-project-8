@@ -1,0 +1,62 @@
+extends layout
+
+block content
+    p.mention Photo by 🇸🇮 Janko Ferlič - @specialdaddy on Unsplash
+
+    h1.h1_home Books
+    .div_button_search
+      p.p_button_create
+        a.button(href="/books/new") Create New Book
+
+      form.search_form(action="/books/search", method="get")
+        input.search(type="text", name="q", placeholder="search...", required)
+        button.button_search(type='submit') 🔍
+
+    if notFoundText
+      .div_button_search
+        p.p_button_create
+          a.button.showBooks(href="/books/page/1") ◀ Show All Books
+
+    if totalResults > 0
+      p.notFoundText #{totalResults} Results Found For:
+        span= notFoundText
+
+    if books.length > 0
+      table
+        thead
+          tr#tr_th
+            th.th_title Title
+            th.th_author Author
+            th.th_genre Genre
+            th.th_year Year
+        tbody
+          each book in books
+            tr
+              td
+                a(href="/books/" + book.id)= book.title
+              td= book.author
+              td= book.genre
+              td= book.year
+
+      .pagination
+        ul
+          if prevPage >= 1
+            li
+              a.prev_next(href='/books/page/' + prevPage  ) ◄
+
+          - for (var i = 1; i <= totalPages; ++i) {
+              if active != i
+                li
+                  a(href='/books/page/' + i)= i
+              else
+                li
+                  a.pagination_active(href='/books/page/' + i)= i
+          - }
+
+          if nextPage <= totalPages
+            li
+              a.prev_next(href='/books/page/' + nextPage ) ►
+
+    else
+      p.notFoundText No Results Found For:
+        span= notFoundText
